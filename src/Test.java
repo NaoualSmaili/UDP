@@ -8,8 +8,13 @@ public class Test {
         new Thread(new UDPClient()).start();
     }
 
-    public static void main(String[] args) {
+    public static void Q2(String[] args) {
         new Thread(new UDPServerHello()).start();
         new Thread(new UDPClientHello()).start();
+    }
+
+    public static void main(String[] args) {
+        (new Thread(new UDPClientInfo())).start();
+        (new Thread(new UDPServerInfo())).start();
     }
 }
