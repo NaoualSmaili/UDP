@@ -8,7 +8,7 @@ class UDPClient implements Runnable {
     private final int size = 2048; // the default size for the buffer array
     /** The builder. */
     UDPClient() {
-        isA = new InetSocketAddress("localhost",8080);
+        isA = new InetSocketAddress("localhost",8083);
         s = null; req = rep = null;
     }
     /** The main run method for threading. */
