@@ -13,8 +13,14 @@ public class Test {
         new Thread(new UDPClientHello()).start();
     }
 
-    public static void main(String[] args) {
-        (new Thread(new UDPClientInfo())).start();
-        (new Thread(new UDPServerInfo())).start();
+    public static void Q3(String[] args) {
+        new Thread(new UDPServerInfo()).start();
+        new Thread(new UDPClientInfo()).start();
     }
+
+    public static void main(String[] args) {
+        new Thread(new UDPServerTimeout()).start();
+        new Thread(new UDPClientTimeout()).start();
+    }
+
 }

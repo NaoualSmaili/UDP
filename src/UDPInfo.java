@@ -27,7 +27,11 @@ class UDPInfo {
         }
     }
 
-    private SocketInfo sI; /* Reference on the internal class SocketInfo. */
+    /**
+     * Reference on the internal class SocketInfo.
+     */
+    private SocketInfo sI;
+
     /**
      * The builder.
      */

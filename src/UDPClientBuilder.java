@@ -8,6 +8,7 @@ class UDPClientBuilder extends UDPInfo  {
     DatagramSocket s;
     DatagramPacket req, rep;
     final int size = 2048;
+    private int timer = 3000;
 
     UDPClientBuilder() {
         isA = null;
@@ -17,6 +18,7 @@ class UDPClientBuilder extends UDPInfo  {
 
     protected void setConnection() throws IOException {
         s = new DatagramSocket();
+        s.setSoTimeout(this.timer);
         isA = new InetSocketAddress("localhost", 8083);
     }
 }
