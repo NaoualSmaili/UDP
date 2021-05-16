@@ -18,9 +18,15 @@ public class Test {
         new Thread(new UDPClientInfo()).start();
     }
 
-    public static void main(String[] args) {
+    public static void Q4(String[] args) {
         new Thread(new UDPServerTimeout()).start();
         new Thread(new UDPClientTimeout()).start();
     }
+
+    public static void main(String[] args) {
+        new Thread(new UDPServerMsg()).start();
+        new Thread(new UDPClientMsg()).start();
+    }
+
 
 }

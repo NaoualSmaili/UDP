@@ -3,7 +3,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 
-class UDPClientBuilder extends UDPInfo  {
+class UDPClientBuilder extends UDPRWText  {
     InetSocketAddress isA;
     DatagramSocket s;
     DatagramPacket req, rep;
