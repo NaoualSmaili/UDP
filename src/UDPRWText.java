@@ -3,19 +3,19 @@ import java.net.DatagramPacket;
 import java.net.InetSocketAddress;
 
 class UDPRWText extends UDPRWEmpty {
+    public UDPRWText() {
+    }
 
     /**
      * The buffer array.
      */
     private byte[] sB;
 
-    UDPRWText() {
-    }
-
     /**
      * To create a sending packet send with a txt message.
      */
-    protected DatagramPacket getTextSendingPacket(InetSocketAddress isA, String msg, int size) throws IOException {
+    protected DatagramPacket getTextSendingPacket(InetSocketAddress isA, String msg, int size) throws
+            IOException {
         sB = toBytes(msg, new byte[size]);
         return new DatagramPacket(sB, 0, sB.length, isA.getAddress(), isA.getPort());
     }
@@ -27,21 +27,18 @@ class UDPRWText extends UDPRWEmpty {
         toBytes(msg, dP.getData());
     }
 
-    private byte[] array;
-
     private byte[] toBytes(String msg, byte[] lbuf) {
         array = msg.getBytes();
         if (array.length < lbuf.length)
-            for (int i = 0; i < array.length; i++)
-                lbuf[i] = array[i];
+            System.arraycopy(array, 0, lbuf, 0, array.length);
         return lbuf;
     }
+
+    private byte[] array;
 
     /**
      * To extract the txt message from a packet.
      */
-    private int p;
-
     protected String getMsg(DatagramPacket dP) {
         sB = dP.getData();
         for (int i = 0; i < sB.length; i++) {
@@ -53,4 +50,19 @@ class UDPRWText extends UDPRWEmpty {
         return new String(dP.getData(), 0, p);
     }
 
+    private int p;
+
+    public static StringBuilder data(byte[] a)
+    {
+        if (a == null)
+            return null;
+        StringBuilder ret = new StringBuilder();
+        int i = 0;
+        while (a[i] != 0)
+        {
+            ret.append((char) a[i]);
+            i++;
+        }
+        return ret;
+    }
 }

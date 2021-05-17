@@ -3,10 +3,6 @@ import java.net.DatagramPacket;
 import java.net.InetSocketAddress;
 
 class UDPRWEmpty extends UDPInfo {
-    /**
-     * The buffer array.
-     */
-    private byte[] sB;
 
     UDPRWEmpty() {
     }
@@ -24,4 +20,5 @@ class UDPRWEmpty extends UDPInfo {
     protected DatagramPacket getReceivingPacket(int size) throws IOException {
         return new DatagramPacket(new byte[size], size);
     }
+
 }

@@ -17,8 +17,8 @@ class UDPServerBuilder extends UDPRWText  {
     }
 
     protected void setConnection() throws IOException {
-        s = new DatagramSocket();
-        s.setSoTimeout(this.timer);
         isA = new InetSocketAddress("localhost", 8083);
+        s = new DatagramSocket(isA.getPort());
+        s.setSoTimeout(this.timer);
     }
 }

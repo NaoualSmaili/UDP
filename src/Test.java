@@ -23,10 +23,17 @@ public class Test {
         new Thread(new UDPClientTimeout()).start();
     }
 
-    public static void main(String[] args) {
+    public static void Q5(String[] args) {
         new Thread(new UDPServerMsg()).start();
         new Thread(new UDPClientMsg()).start();
     }
 
+    public static void Q6(String[] args) {
+        new Thread(new UDPServerChat()).start();
+        new Thread(new UDPClientChat()).start();
+    }
 
+    public static void main(String[] args) {
+
+    }
 }
