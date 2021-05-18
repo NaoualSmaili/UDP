@@ -34,6 +34,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
-
+        new Thread(new UDPServerTime()).start();
+        new Thread(new UDPClientTime()).start();
     }
+
 }

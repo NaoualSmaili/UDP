@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetSocketAddress;
 
-class UDPRWText extends UDPRWEmpty {
+class UDPRWText extends UDPRWTime {
     public UDPRWText() {
     }
 
