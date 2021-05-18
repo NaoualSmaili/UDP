@@ -33,9 +33,14 @@ public class Test {
         new Thread(new UDPClientChat()).start();
     }
 
-    public static void main(String[] args) {
+    public static void Q7(String[] args) {
         new Thread(new UDPServerTime()).start();
         new Thread(new UDPClientTime()).start();
+    }
+
+    public static void main(String[] args) {
+        new Thread(new UDPServerNTP()).start();
+        new Thread(new UDPClientNTP()).start();
     }
 
 }
